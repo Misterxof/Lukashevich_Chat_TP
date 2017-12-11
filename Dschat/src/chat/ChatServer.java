@@ -1,5 +1,6 @@
 package chat;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -37,12 +38,17 @@ public class ChatServer extends HttpServlet {
 		response.setContentType("text/html");
 		
 		PrintWriter out = response.getWriter();
+		FileWriter writer = new FileWriter("C:\\Users\\Misha\\workspace\\Dschat\\output.txt", false);
 		
 		for(ChatEntry ce : chatwork){
 			out.println(ce.getNick() + ": " + ce.getMessage());
+			writer.write(ce.getNick() + ": " + ce.getMessage()); 
+			writer.append("\r\n");
 		}
 		
 		out.close();
+		writer.flush();
+		writer.close();
 	}
 
 	/**

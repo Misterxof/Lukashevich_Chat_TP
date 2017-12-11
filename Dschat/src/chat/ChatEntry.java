@@ -4,15 +4,14 @@ public class ChatEntry {
 	private String nick;
 	private String message;
 	
-	
 	/**
 	 * @param nick
-	 * @param in
+	 * @param message
 	 */
 	public ChatEntry(String nick, String message ) {
 		super();
 		this.nick = nick;
-		this.message = message ;
+		this.message = message;
 	}
 	
 	/**
@@ -28,13 +27,13 @@ public class ChatEntry {
 		this.nick = nick;
 	}
 	/**
-	 * @return the in
+	 * @return the message
 	 */
 	public String getMessage() {
 		return message ;
 	}
 	/**
-	 * @param in the in to set
+	 * @param in the message to set
 	 */
 	public void setMessage(String message ) {
 		this.message = message;
