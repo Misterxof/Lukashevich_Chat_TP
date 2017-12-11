@@ -41,7 +41,7 @@ public class ChatController implements ActionListener{
          
         Timer timer = new Timer();
          
-        //запустить таймер:
+        
         timer.scheduleAtFixedRate(new GetStuff(v,m), 0, 1000);
     }
  

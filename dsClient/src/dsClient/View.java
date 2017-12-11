@@ -16,10 +16,10 @@ public class View {
     private JFrame frame;
     private JScrollPane scrollPane;
     private JTextField typeField;
-    private JButton btnSenden;
+    private JButton btnSend;
     private JTextArea textArea;
     private JTextField nameField;
-    private JLabel lblDeinName;
+    private JLabel lbNickname;
  
     /**
      * @return the frame
@@ -43,10 +43,10 @@ public class View {
     }
  
     /**
-     * @return the btnSenden
+     * @return the btnSend
      */
-    public JButton getBtnSenden() {
-        return btnSenden;
+    public JButton getBtnSend() {
+        return btnSend;
     }
  
     /**
@@ -64,10 +64,10 @@ public class View {
     }
  
     /**
-     * @return the lblDeinName
+     * @return the lbNickname
      */
-    public JLabel getLblDeinName() {
-        return lblDeinName;
+    public JLabel getLbNickname() {
+        return lbNickname;
     }
  
     /**
@@ -94,8 +94,8 @@ public class View {
     /**
      * @param btnSenden the btnSenden to set
      */
-    public void setBtnSenden(JButton btnSenden) {
-        this.btnSenden = btnSenden;
+    public void setBtnSend(JButton btnSend) {
+        this.btnSend = btnSend;
     }
  
     /**
@@ -113,10 +113,10 @@ public class View {
     }
  
     /**
-     * @param lblDeinName the lblDeinName to set
+     * @param lbNickname the lbNickname to set
      */
-    public void setLblDeinName(JLabel lblDeinName) {
-        this.lblDeinName = lblDeinName;
+    public void setLbNickname(JLabel lbNickname) {
+        this.lbNickname = lbNickname;
     }
  
     /**
@@ -135,8 +135,8 @@ public class View {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(new MigLayout("", "[grow][grow]", "[][grow][]"));
          
-        lblDeinName = DefaultComponentFactory.getInstance().createLabel("Dein Name:");
-        frame.getContentPane().add(lblDeinName, "cell 0 0,alignx trailing");
+        lbNickname = DefaultComponentFactory.getInstance().createLabel("Nickname:");
+        frame.getContentPane().add(lbNickname, "cell 0 0,alignx trailing");
          
         nameField = new JTextField();
         nameField.setText("nameField");
@@ -154,9 +154,9 @@ public class View {
         frame.getContentPane().add(typeField, "cell 0 2,growx");
         typeField.setColumns(10);
          
-        btnSenden = new JButton("Senden");
-        btnSenden.setActionCommand("send");
-        btnSenden.addActionListener(new ChatController(this, m));
-        frame.getContentPane().add(btnSenden, "cell 1 2");
+        btnSend = new JButton("Send");
+        btnSend.setActionCommand("send");
+        btnSend.addActionListener(new ChatController(this, m));
+        frame.getContentPane().add(btnSend, "cell 1 2");
     }
 }
